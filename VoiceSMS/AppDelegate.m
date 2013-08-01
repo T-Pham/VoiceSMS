@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
 #import "PeoplePickerDelegate.h"
 
 @implementation AppDelegate
@@ -22,6 +23,7 @@ PeoplePickerDelegate *peoplePickerDelegate;
     peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
     peoplePickerDelegate = [[PeoplePickerDelegate alloc] init];
     peoplePicker.delegate = peoplePickerDelegate;
+    peoplePicker.displayedProperties = @[[NSNumber numberWithInt:kABPersonPhoneProperty]];
     self.window.rootViewController = peoplePicker;
     [self.window makeKeyAndVisible];
     return YES;
