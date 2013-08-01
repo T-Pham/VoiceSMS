@@ -8,15 +8,20 @@
 
 #import "AppDelegate.h"
 #import <AddressBookUI/AddressBookUI.h>
+#import "PeoplePickerDelegate.h"
 
 @implementation AppDelegate
+ABPeoplePickerNavigationController *peoplePicker;
+PeoplePickerDelegate *peoplePickerDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+    peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+    peoplePickerDelegate = [[PeoplePickerDelegate alloc] init];
+    peoplePicker.delegate = peoplePickerDelegate;
     self.window.rootViewController = peoplePicker;
     [self.window makeKeyAndVisible];
     return YES;

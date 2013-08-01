@@ -17,6 +17,7 @@
 		97022A4517AA205600E58A0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97022A4417AA205600E58A0B /* Default@2x.png */; };
 		97022A4717AA205600E58A0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97022A4617AA205600E58A0B /* Default-568h@2x.png */; };
 		97022A4E17AA410C00E58A0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97022A4D17AA410C00E58A0B /* AddressBookUI.framework */; };
+		97022A5117AA433300E58A0B /* PeoplePickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97022A5017AA433300E58A0B /* PeoplePickerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		97022A4417AA205600E58A0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		97022A4617AA205600E58A0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		97022A4D17AA410C00E58A0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		97022A4F17AA433300E58A0B /* PeoplePickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePickerDelegate.h; sourceTree = "<group>"; };
+		97022A5017AA433300E58A0B /* PeoplePickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePickerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 			children = (
 				97022A3F17AA205600E58A0B /* AppDelegate.h */,
 				97022A4017AA205600E58A0B /* AppDelegate.m */,
+				97022A4F17AA433300E58A0B /* PeoplePickerDelegate.h */,
+				97022A5017AA433300E58A0B /* PeoplePickerDelegate.m */,
 				97022A3717AA205600E58A0B /* Supporting Files */,
 			);
 			path = VoiceSMS;
@@ -170,6 +175,7 @@
 			files = (
 				97022A3D17AA205600E58A0B /* main.m in Sources */,
 				97022A4117AA205600E58A0B /* AppDelegate.m in Sources */,
+				97022A5117AA433300E58A0B /* PeoplePickerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
