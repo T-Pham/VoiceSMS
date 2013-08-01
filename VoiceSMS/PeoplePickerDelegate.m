@@ -13,6 +13,7 @@
 @implementation PeoplePickerDelegate
 
 - (void)callPhoneNumber:(NSString *)phoneNumber {
+    if (!phoneNumber) return;
     NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
     NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
     [[UIApplication sharedApplication] openURL:phoneURL];
@@ -28,8 +29,12 @@
 }
 
 - (NSString *)voiceSMSPhoneNumberFromPhoneNumber:(NSString *)phoneNumber {
+    if (!phoneNumber) return nil;
     NSString *prefix = [self voiceSMSPrefix];
-    return phoneNumber;
+    if (!prefix) return nil;
+    NSString *standardizedNumber = [self standardizeNumber:phoneNumber];
+    if (!standardizedNumber) return nil;
+    return [prefix stringByAppendingString:standardizedNumber];
 }
 
 - (NSString *)voiceSMSPrefix {
@@ -43,6 +48,17 @@
         if ([@"04" isEqualToString:mnc]) return @"1354";
     }
     return nil;
+}
+
+- (NSString *)standardizeNumber:(NSString *)phoneNumber {
+    if ([@"+" isEqualToString:[phoneNumber substringToIndex:1]]) {
+        if (phoneNumber.length < 4) return nil;
+        NSString *first3Chars = [phoneNumber substringToIndex:3];
+        if ([@"+84" isEqualToString:first3Chars]) phoneNumber = [@"0" stringByAppendingString:[phoneNumber substringFromIndex:3]];
+        else return nil;
+    }
+    NSString *standardizedNumber = [[phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+    return standardizedNumber;
 }
 
 #pragma UINavigationControllerDelegate methods
