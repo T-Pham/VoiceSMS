@@ -23,6 +23,7 @@ PeoplePickerDelegate *peoplePickerDelegate;
     peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
     peoplePickerDelegate = [[PeoplePickerDelegate alloc] init];
     peoplePicker.delegate = peoplePickerDelegate;
+    peoplePicker.peoplePickerDelegate = peoplePickerDelegate;
     peoplePicker.displayedProperties = @[[NSNumber numberWithInt:kABPersonPhoneProperty]];
     self.window.rootViewController = peoplePicker;
     [self.window makeKeyAndVisible];
