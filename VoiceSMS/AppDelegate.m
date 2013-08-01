@@ -15,16 +15,20 @@
 ABPeoplePickerNavigationController *peoplePicker;
 PeoplePickerDelegate *peoplePickerDelegate;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+- (void)setUp {
     peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
     peoplePickerDelegate = [[PeoplePickerDelegate alloc] init];
     peoplePicker.delegate = peoplePickerDelegate;
     peoplePicker.peoplePickerDelegate = peoplePickerDelegate;
     peoplePicker.displayedProperties = @[[NSNumber numberWithInt:kABPersonPhoneProperty]];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self setUp];
     self.window.rootViewController = peoplePicker;
     [self.window makeKeyAndVisible];
     return YES;
