@@ -16,6 +16,7 @@
 		97022A4317AA205600E58A0B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 97022A4217AA205600E58A0B /* Default.png */; };
 		97022A4517AA205600E58A0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97022A4417AA205600E58A0B /* Default@2x.png */; };
 		97022A4717AA205600E58A0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97022A4617AA205600E58A0B /* Default-568h@2x.png */; };
+		97022A4E17AA410C00E58A0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97022A4D17AA410C00E58A0B /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		97022A4217AA205600E58A0B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		97022A4417AA205600E58A0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		97022A4617AA205600E58A0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		97022A4D17AA410C00E58A0B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97022A4E17AA410C00E58A0B /* AddressBookUI.framework in Frameworks */,
 				97022A3117AA205600E58A0B /* UIKit.framework in Frameworks */,
 				97022A3317AA205600E58A0B /* Foundation.framework in Frameworks */,
 				97022A3517AA205600E58A0B /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +54,7 @@
 		97022A2417AA205500E58A0B = {
 			isa = PBXGroup;
 			children = (
+				97022A4D17AA410C00E58A0B /* AddressBookUI.framework */,
 				97022A3617AA205600E58A0B /* VoiceSMS */,
 				97022A2F17AA205600E58A0B /* Frameworks */,
 				97022A2E17AA205600E58A0B /* Products */,
@@ -245,6 +249,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceSMS/VoiceSMS-Prefix.pch";
 				INFOPLIST_FILE = "VoiceSMS/VoiceSMS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -256,6 +261,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceSMS/VoiceSMS-Prefix.pch";
 				INFOPLIST_FILE = "VoiceSMS/VoiceSMS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
