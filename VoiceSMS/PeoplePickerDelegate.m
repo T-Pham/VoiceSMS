@@ -7,6 +7,8 @@
 //
 
 #import "PeoplePickerDelegate.h"
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 @implementation PeoplePickerDelegate
 
@@ -26,7 +28,21 @@
 }
 
 - (NSString *)voiceSMSPhoneNumberFromPhoneNumber:(NSString *)phoneNumber {
+    NSString *prefix = [self voiceSMSPrefix];
     return phoneNumber;
+}
+
+- (NSString *)voiceSMSPrefix {
+    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [networkInfo subscriberCellularProvider];
+    NSString *mcc = [carrier mobileCountryCode];
+    NSString *mnc = [carrier mobileNetworkCode];
+    if ([@"452" isEqualToString:mcc]) {
+        if ([@"01" isEqualToString:mnc]) return @"9302";
+        if ([@"02" isEqualToString:mnc]) return @"945";
+        if ([@"04" isEqualToString:mnc]) return @"1354";
+    }
+    return nil;
 }
 
 #pragma UINavigationControllerDelegate methods

@@ -19,6 +19,7 @@
 		97022A4E17AA410C00E58A0B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97022A4D17AA410C00E58A0B /* AddressBookUI.framework */; };
 		97022A5117AA433300E58A0B /* PeoplePickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97022A5017AA433300E58A0B /* PeoplePickerDelegate.m */; };
 		97022A5317AA4CE800E58A0B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97022A5217AA4CE800E58A0B /* AddressBook.framework */; };
+		97022A5517AA58B400E58A0B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97022A5417AA58B400E58A0B /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		97022A4F17AA433300E58A0B /* PeoplePickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePickerDelegate.h; sourceTree = "<group>"; };
 		97022A5017AA433300E58A0B /* PeoplePickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePickerDelegate.m; sourceTree = "<group>"; };
 		97022A5217AA4CE800E58A0B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		97022A5417AA58B400E58A0B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97022A5517AA58B400E58A0B /* CoreTelephony.framework in Frameworks */,
 				97022A5317AA4CE800E58A0B /* AddressBook.framework in Frameworks */,
 				97022A4E17AA410C00E58A0B /* AddressBookUI.framework in Frameworks */,
 				97022A3117AA205600E58A0B /* UIKit.framework in Frameworks */,
@@ -77,6 +80,7 @@
 		97022A2F17AA205600E58A0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97022A5417AA58B400E58A0B /* CoreTelephony.framework */,
 				97022A5217AA4CE800E58A0B /* AddressBook.framework */,
 				97022A4D17AA410C00E58A0B /* AddressBookUI.framework */,
 				97022A3017AA205600E58A0B /* UIKit.framework */,
