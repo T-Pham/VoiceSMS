@@ -56,6 +56,9 @@
         NSString *first3Chars = [phoneNumber substringToIndex:3];
         if ([@"+84" isEqualToString:first3Chars]) phoneNumber = [@"0" stringByAppendingString:[phoneNumber substringFromIndex:3]];
         else return nil;
+    } else {
+        NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"*#,;"];
+        if ([phoneNumber rangeOfCharacterFromSet:set].location != NSNotFound) return nil;
     }
     NSString *standardizedNumber = [[phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
     return standardizedNumber;
