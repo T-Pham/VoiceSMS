@@ -14,7 +14,7 @@
 
 - (void)callPhoneNumber:(NSString *)phoneNumber {
     if (!phoneNumber) return;
-    NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSString *phoneURLString = [NSString stringWithFormat:@"telprompt:%@", phoneNumber];
     NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
     [[UIApplication sharedApplication] openURL:phoneURL];
 }
