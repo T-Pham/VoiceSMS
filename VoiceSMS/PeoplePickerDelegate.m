@@ -16,8 +16,13 @@
     [[UIApplication sharedApplication] openURL:phoneURL];
 }
 
-- (NSString *)getPhoneNumberWithProperty:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    return @"0909090909";
+- (NSString *)getPhoneNumberWithPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+    if (property == kABPersonPhoneProperty) {
+        ABMultiValueRef numbers = ABRecordCopyValue(person, property);
+        NSString* targetNumber = (__bridge NSString *) ABMultiValueCopyValueAtIndex(numbers, ABMultiValueGetIndexForIdentifier(numbers, identifier));
+        return targetNumber;
+    }
+    return nil;
 }
 
 - (NSString *)voiceSMSPhoneNumberFromPhoneNumber:(NSString *)phoneNumber {
@@ -37,7 +42,7 @@
 }
 
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
-    NSString *originalPhoneNumber = [self getPhoneNumberWithProperty:property identifier:identifier];
+    NSString *originalPhoneNumber = [self getPhoneNumberWithPerson:person property:property identifier:identifier];
     NSString *phoneNumber = [self voiceSMSPhoneNumberFromPhoneNumber:originalPhoneNumber];
     [self callPhoneNumber:phoneNumber];
     return NO;
